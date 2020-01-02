@@ -469,9 +469,7 @@ public class NumberUtils {
                 return createBigInteger(str);
             }
             // >¸ÄÎªÁË>=
-            if (hexDigits > 8 ||  (hexDigits == 8 && (str.charAt(pfxLen) == '8' ||
-            		str.charAt(pfxLen) == '9' ||
-            		str.charAt(pfxLen) == 'F' ))) { // too many for an int
+            if (hexDigits > 8 ||  (hexDigits == 8 && !((str.charAt(pfxLen)) < 8 ))) { // too many for an int
                 return createLong(str);
             }
             return createInteger(str);
